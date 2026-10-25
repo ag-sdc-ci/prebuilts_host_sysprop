@@ -1,0 +1,85 @@
+package {
+    default_applicable_licenses: ["prebuilts_host_sysprop_license"],
+}
+
+license {
+    name: "prebuilts_host_sysprop_license",
+    visibility: [":__subpackages__"],
+    license_kinds: [
+        "SPDX-license-identifier-Apache-2.0",
+    ],
+    license_text: [
+        "LICENSE",
+    ],
+}
+
+cc_prebuilt_binary {
+    name: "sysprop_cpp",
+    srcs: ["bin/sysprop_cpp"],
+    check_elf_files: false,
+    prefer: true,
+    host_supported: true,
+    device_supported: false,
+}
+
+cc_prebuilt_binary {
+    name: "sysprop_java",
+    srcs: ["bin/sysprop_java"],
+    check_elf_files: false,
+    prefer: true,
+    host_supported: true,
+    device_supported: false,
+}
+
+cc_prebuilt_binary {
+    name: "sysprop_rust",
+    srcs: ["bin/sysprop_rust"],
+    check_elf_files: false,
+    prefer: true,
+    host_supported: true,
+    device_supported: false,
+}
+
+cc_prebuilt_binary {
+    name: "sysprop_api_checker",
+    srcs: ["bin/sysprop_api_checker"],
+    check_elf_files: false,
+    prefer: true,
+    host_supported: true,
+    device_supported: false,
+}
+
+cc_prebuilt_binary {
+    name: "sysprop_api_dump",
+    srcs: ["bin/sysprop_api_dump"],
+    check_elf_files: false,
+    prefer: true,
+    host_supported: true,
+    device_supported: false,
+}
+
+java_defaults {
+    name: "sysprop-library-stub-defaults",
+    srcs: [
+        "stub/**/*.java",
+    ],
+    installable: false,
+    sdk_version: "core_current",
+}
+
+java_library {
+    name: "sysprop-library-stub-platform",
+    defaults: ["sysprop-library-stub-defaults"],
+}
+
+java_library {
+    name: "sysprop-library-stub-vendor",
+    defaults: ["sysprop-library-stub-defaults"],
+    soc_specific: true,
+}
+
+java_library {
+    name: "sysprop-library-stub-product",
+    defaults: ["sysprop-library-stub-defaults"],
+    product_specific: true,
+}

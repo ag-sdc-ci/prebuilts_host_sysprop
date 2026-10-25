@@ -1,0 +1,6 @@
+shadow prebuilt repo: sysprop (host)
+  upstream: https://android.googlesource.com/platform/system/tools/sysprop
+  branch: universal
+  source-baseline: 17.0.0 (main)
+  binaries: sysprop_cpp, sysprop_java, sysprop_rust, sysprop_api_checker, sysprop_api_dump
+  date: 2026-10-25
